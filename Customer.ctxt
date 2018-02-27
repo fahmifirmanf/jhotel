@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Customer
+comment1.params=idnew\ namanew
+comment1.target=Customer(int,\ java.lang.String)
+comment2.params=
+comment2.target=int\ getID()
+comment3.params=
+comment3.target=java.lang.String\ getNama()
+comment4.params=idx
+comment4.target=void\ setID(int)
+comment5.params=namax
+comment5.target=void\ setNama(java.lang.String)
+numComments=6

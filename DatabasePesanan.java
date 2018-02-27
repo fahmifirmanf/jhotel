@@ -17,12 +17,11 @@ public class DatabasePesanan
     
     public Pesanan getPesanan(Customer cust)
     {
-        pesanan pesan = new Pesanan();
+        Pesanan pesan = new Pesanan();
         return pesan;
     } 
     
     public void pesananDibatalkan(Pesanan pesan)
     {
     }
-}
 }

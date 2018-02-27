@@ -37,7 +37,7 @@ public class Pesanan
         return false;
     }
     
-    pulic void setPelanggan(Customer baru)
+    public void setPelanggan(Customer baru)
     {
         pelanggan = baru;
     }
@@ -52,4 +52,4 @@ public class Pesanan
         isSelesai = diproses;
     }
 }
-}
+
