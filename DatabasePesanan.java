@@ -1,5 +1,10 @@
 
-
+/**
+ * Kelas ini untuk menunjukkan informasi mengenai Data Pesanan Hotel
+ *
+ * @author Fahmi Firman F
+ * @version 01-03-2018
+ */
 public class DatabasePesanan
 {
     private String[] list_pesanan;

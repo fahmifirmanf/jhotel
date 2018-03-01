@@ -1,5 +1,10 @@
 
-
+/**
+ * Kelas ini untuk menunjukkan informasi mengenai Data Customer Hotel
+ *
+ * @author Fahmi Firman F
+ * @version 01-03-2018
+ */
 public class DatabaseCustomer
 {
     private String[] list_customer;
