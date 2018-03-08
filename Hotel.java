@@ -23,10 +23,10 @@ public class Hotel
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * method ini digunakan untuk menunjukkan informasi hotel
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param nama, lokasi, bintang
+     * @return nama, lokasi, bintang
      */
     public Hotel (String nama, Lokasi lokasi, int bintang)
     {
@@ -35,31 +35,67 @@ public class Hotel
         this.bintang = bintang;
     }
     
+    /**
+     * method ini digunakan untuk menampilkan nilai Bintang
+     *
+     * 
+     * @return bintang
+     */
     public int getBintang()
     {
         return bintang; //menunjukkan nilai bintang
     }
     
+    /**
+     * method ini digunakan untuk menampilkan nama Hotel
+     *
+     * 
+     * @return nama
+     */
     public String getNama()
     {
         return nama;
     }
     
+    /**
+     * method ini digunakan untuk menampilkan nilai Lokasi hotel
+     *
+     * 
+     * @return lokasi
+     */
     public Lokasi getLokasi()
     {
         return lokasi;
     }
     
+    /**
+     * method ini digunakan untuk memberi nama Hotel
+     *
+     * 
+     * @return nama
+     */
     public void setNama(String nama)
     {
         this.nama = nama;
     }
     
+    /**
+     * method ini digunakan untuk memberi nama Lokasi
+     *
+     * 
+     * @return lokasi
+     */
     public void setLokasi(Lokasi lokasi)
     {
         this.lokasi = lokasi;
     }
     
+    /**
+     * method ini digunakan untuk memberi nilai bintang
+     *
+     * 
+     * @return bintang
+     */
     public void setBintang(int bintang)
     {
         this.bintang = bintang;

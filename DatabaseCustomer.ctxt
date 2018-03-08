@@ -1,9 +1,12 @@
 #BlueJ class context
 comment0.target=DatabaseCustomer
+comment0.text=\r\n\ Kelas\ ini\ untuk\ menunjukkan\ informasi\ mengenai\ Data\ Customer\ Hotel\r\n\r\n\ @author\ Fahmi\ Firman\ F\r\n\ @version\ 01-03-2018\r\n
 comment1.params=baru
 comment1.target=boolean\ addCustomer(Customer)
 comment2.params=id
 comment2.target=boolean\ removeCustomer(int)
+comment2.text=\r\n\ method\ ini\ digunakan\ untuk\ menghapus\ customer\ dari\ database\ berdasarkan\r\n\ id\r\n\r\n\ @param\ id\r\n\ @return\ false\r\n
 comment3.params=
 comment3.target=java.lang.String[]\ getCustomerDatabase()
+comment3.text=\r\n\ method\ ini\ digunakan\ untuk\ mencari\ customer\ di\ database\r\n\r\n\ \r\n\ @return\ list_customer\r\n
 numComments=4

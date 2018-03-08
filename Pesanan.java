@@ -14,6 +14,7 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
    
     public Pesanan( )
    {
@@ -41,7 +42,7 @@ public class Pesanan
     /**
      * method ini digunakan untuk menampilkan info pelanggan
      *
-     * @param 
+     * 
      * @return pelanggan
      */
     public Customer getPelanggan()
@@ -49,10 +50,15 @@ public class Pesanan
         return pelanggan;
     }
     
+    public Room getRoom()
+    {
+        return kamar;
+    }
+    
      /**
      * method ini digunakan untuk menampilkan status Pesanan
      *
-     * @param 
+     * 
      * @return true/false
      */
     public boolean getStatusDiproses()
@@ -64,7 +70,7 @@ public class Pesanan
     /**
      * method ini digunakan untuk menampilkan status Pesanan Selesai atau belum
      *
-     * @param 
+     * 
      * @return true/false
      */public boolean getStatusSelesai()
     {
@@ -96,8 +102,8 @@ public class Pesanan
     /**
      * method ini digunakan untuk memberitahu apakah sudah diproses atau tidak 
      *
-     * @param biaya
-     * @return biaya
+     * @param diproses
+     * @return diproses
      */
     public void setStatusDiproses(boolean diproses)
     {
@@ -107,17 +113,22 @@ public class Pesanan
     /**
      * method ini digunakan untuk memberitahu apakah sudah diproses atau belum
      *
-     * @param biaya
-     * @return biaya
+     * @param diproses
+     * @return diproses
      */
     public void setStatusSelesai(boolean diproses)
     {
         this.isSelesai = diproses;
     }
     
-    /* 
+     public void setRoom(Room kamar)
+    {
+        this.kamar = kamar;
+    }
+    
+    /* *
      * 
-     Method printData()
+     * Method printData()
      digunakan untuk mencetak biaya
      *
     */ 

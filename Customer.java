@@ -20,21 +20,45 @@ public class Customer
         this.id = id;
     }
 
+    /**
+     * method ini digunakan untuk medapatkan nilai id customer
+     *
+     * 
+     * @return id
+     */
     public int getID()
     {
         return id;
     }
     
+    /**
+     * method ini digunakan untuk medapatkan nama customer
+     *
+     * 
+     * @return nama
+     */
     public String getNama()
     {
      return nama;   
     }
     
+    /**
+     * method ini digunakan untuk mengset id customer
+     *
+     * @param id
+     * @return id
+     */
     public void setID(int id)
     {
      this.id = id;
     }
     
+    /**
+     * method ini digunakan untuk memberi nilai nama customer
+     *
+     * @param nama
+     * @return nama
+     */
     public void setNama(String nama)
     {
      this.nama = nama;
