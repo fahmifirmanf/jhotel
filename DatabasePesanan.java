@@ -7,8 +7,12 @@
  */
 public class DatabasePesanan
 {
-    private String[] list_pesanan;
+    private static String[] list_pesanan;
 
+    public DatabasePesanan()
+    {
+               
+    }
     
     /**
      * method ini digunakan untuk menambah pesanan baru
@@ -28,7 +32,7 @@ public class DatabasePesanan
      *
      * @param pesan
      * @return false
-     */public boolean removePesanan(Pesanan pesan)
+     */public static boolean removePesanan(Pesanan pesan)
     {
         return false;
     }
@@ -39,10 +43,15 @@ public class DatabasePesanan
      * @param cust
      * @return pesan
      */
-    public Pesanan getPesanan(Customer cust)
+    public static Pesanan getPesanan(Customer cust)
     {
         Pesanan pesan = new Pesanan();
         return pesan;
+    } 
+    
+    public static String[] getPesananDatabase()
+    {
+        return list_pesanan; 
     } 
     
     /**
@@ -51,7 +60,8 @@ public class DatabasePesanan
      * @param pesan
      * 
      */
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {
+        
     }
 }

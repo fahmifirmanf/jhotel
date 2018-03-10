@@ -66,7 +66,8 @@ public class Customer
     
     public void printData() 
     {
-        System.out.println(" Nama Customer : " +nama); 
+        System.out.println(" ID : " +id);
+        System.out.println(" Nama Pelanggan : " +nama); 
     }
     
 }

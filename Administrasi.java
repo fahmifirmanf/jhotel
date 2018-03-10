@@ -2,8 +2,8 @@
 /**
  * Write a description of class Administrasi here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Fahmi Firman F
+ * @version 10-03-2017
  */
 public class Administrasi
 {
@@ -51,8 +51,8 @@ public class Administrasi
     {
         Pesanan pesan = kamar.getPesanan();
         pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(false);
-        kamar.setPesanan(null);
+        pesan.setStatusDiproses(false);       
+        pesan.setRoom(null);
         roomLepasPesanan(kamar);
     }
     
@@ -61,6 +61,7 @@ public class Administrasi
         Pesanan pesan = kamar.getPesanan();
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
         kamar.setPesanan(null);
         roomLepasPesanan(kamar);
     }

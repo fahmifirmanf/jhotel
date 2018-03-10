@@ -7,7 +7,12 @@
  */
 public class DatabaseCustomer
 {
-    private String[] list_customer;
+    private static String[] list_customer;
+    
+    public DatabaseCustomer()
+    {
+        
+    }
     
     public static boolean addCustomer(Customer baru)
     {
@@ -22,7 +27,7 @@ public class DatabaseCustomer
      * @param id
      * @return false
      */
-    public boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id)
     {
         return false;
     }
@@ -33,7 +38,7 @@ public class DatabaseCustomer
      * 
      * @return list_customer
      */
-    public String[] getCustomerDatabase()
+    public static String[] getCustomerDatabase()
     {
         return list_customer;
     }

@@ -26,7 +26,13 @@ public class Room
         // initialise instance variables
         
     }
-
+    
+    public Room(Hotel hotel, String nomor_kamar, boolean IsAvailable, Customer customer, double dailyTariff, StatusKamar status_kamar)
+    {
+        // initialise instance variables
+        
+    }
+    
     /**
      * An example of a method - replace this comment with your own
      *
@@ -117,6 +123,11 @@ public class Room
     
     public void printData()
     {
-        
+    System.out.println(" Nama Hotel : " +hotel.getNama());
+    System.out.println(" Nomor Kamar : " +nomor_kamar); 
+    System.out.println(" Status Ketersediaan : " +isAvailable); 
+    System.out.println(" Pelanggan : " +customer.getNama());
+    System.out.println(" Harga : " +dailyTariff);
+    System.out.println(" Status Kamar : " +status_kamar); 
     }
 }
