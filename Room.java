@@ -92,7 +92,7 @@ public class Room
     
     public void setID(int ID)
     {
-        this.hotel = hotel;
+        this.id = ID;
     }
     
     public void setNomorKamar(String nomor_kamar)
