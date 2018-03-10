@@ -27,10 +27,14 @@ public class Room
         
     }
     
-    public Room(Hotel hotel, String nomor_kamar, boolean IsAvailable, Customer customer, double dailyTariff, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, Customer customer, double dailyTariff, StatusKamar status_kamar)
     {
-        // initialise instance variables
-        
+        this.hotel = hotel;
+        this.nomor_kamar = nomor_kamar;
+        this.isAvailable = isAvailable;
+        this.customer = customer;
+        this.dailyTariff = dailyTariff;
+        this.status_kamar = status_kamar;
     }
     
     /**
