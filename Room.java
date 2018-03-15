@@ -5,15 +5,13 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Room
+public abstract class Room
 {
     // instance variables - replace the example below with your own
-    private Hotel hotel;
-    private int id;
+    private Hotel hotel; 
     private String nomor_kamar;
     private boolean isAvailable;
-    private Customer customer;
-    private double dailyTariff;
+    protected double dailyTariff;
     private StatusKamar status_kamar;
     private Pesanan pesan;
     
@@ -27,13 +25,11 @@ public class Room
         
     }
     
-    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, Customer customer, double dailyTariff, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.isAvailable = isAvailable;
-        this.customer = customer;
-        this.dailyTariff = dailyTariff;
+        this.isAvailable = isAvailable;        
         this.status_kamar = status_kamar;
     }
     
@@ -50,11 +46,7 @@ public class Room
         return hotel; 
     }// put your code here
         
-      public int getID()
-    {
-        return id; 
-    }
-    
+        
       public String getNomorKamar()
     {
         return nomor_kamar; 
@@ -65,11 +57,7 @@ public class Room
         return isAvailable; 
     }
     
-      public Customer getCustomer()
-    {
-        return customer; 
-    }
-    
+        
       public double getDailyTariff()
     {
         return dailyTariff; 
@@ -85,16 +73,17 @@ public class Room
         return pesan; 
     }
     
+     public abstract TipeKamar getTipeKamar();
+          
+    
+    
     public void setHotel(Hotel hotel)
     {
         this.hotel = hotel;
     }
     
-    public void setID(int ID)
-    {
-        this.id = ID;
-    }
-    
+   
+
     public void setNomorKamar(String nomor_kamar)
     {
         this.nomor_kamar = nomor_kamar;
@@ -104,11 +93,7 @@ public class Room
     {
         this.isAvailable = isAvailable;
     }
-    
-    public void setCustomer(Customer customer)
-    {
-        this.customer = customer;
-    }
+        
     
     public void setDailyTariff(double dailyTariff)
     {
@@ -130,7 +115,6 @@ public class Room
     System.out.println(" Nama Hotel : " +hotel.getNama());
     System.out.println(" Nomor Kamar : " +nomor_kamar); 
     System.out.println(" Status Ketersediaan : " +isAvailable); 
-    System.out.println(" Pelanggan : " +customer.getNama());
     System.out.println(" Harga : " +dailyTariff);
     System.out.println(" Status Kamar : " +status_kamar); 
     }

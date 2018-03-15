@@ -45,8 +45,8 @@ public class DatabasePesanan
      */
     public static Pesanan getPesanan(Customer cust)
     {
-        Pesanan pesan = new Pesanan();
-        return pesan;
+        
+        return null;
     } 
     
     public static String[] getPesananDatabase()
