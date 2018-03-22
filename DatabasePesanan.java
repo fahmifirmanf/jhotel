@@ -51,7 +51,7 @@ public class DatabasePesanan
     
     public static String[] getPesananDatabase()
     {
-        return list_pesanan; 
+        return null; 
     } 
     
     /**

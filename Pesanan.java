@@ -1,10 +1,12 @@
-
+import java.util.Date;
 /**
  * Kelas ini untuk menunjukkan informasi mengenai Pemesanan Kamar Hotel
  *
  * @author Fahmi Firman F
  * @version 01-03-2018
  */
+
+
 public class Pesanan
 {
     // instance variables - replace the example below with your own
@@ -14,6 +16,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
    
    
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
@@ -21,7 +24,7 @@ public class Pesanan
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
-        this.biaya = (kamar.getDailyTariff())*jumlahHari;
+        biaya = kamar.getDailyTariff()*jumlahHari;
     }
 
     
@@ -63,7 +66,7 @@ public class Pesanan
      */
     public boolean getStatusDiproses()
     {
-        return false;
+        return isDiproses;
     }
     
     
@@ -74,7 +77,7 @@ public class Pesanan
      * @return true/false
      */public boolean getStatusSelesai()
     {
-        return false;
+        return isSelesai;
     }
     
     public Room getRoom()
@@ -82,6 +85,10 @@ public class Pesanan
         return kamar;
     }
     
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
     /**
      * method ini digunakan untuk memberikan jumlah biaya
      *
@@ -90,7 +97,7 @@ public class Pesanan
      */
     public void setBiaya()
     {
-       this.biaya = (kamar.getDailyTariff())*jumlahHari;
+       biaya = kamar.getDailyTariff()*jumlahHari;
     }
     
     public void setJumlahHari(double jumlahHari)
@@ -104,7 +111,7 @@ public class Pesanan
      * @param biaya
      * @return biaya
      */
-    public void setPelanggan(Customer pelanggan)
+    public void setPelanggan(Customer pelanggan) //atau customer baru
     {
         this.pelanggan = pelanggan;
     }
@@ -140,12 +147,22 @@ public class Pesanan
         this.kamar = kamar;
     }
     
+    public void setTangalPesan(Date tanggalPesan)
+    {
+        this.tanggalPesan = tanggalPesan;
+    }
+    
+    public String toString(){
+        return null;
+    }
+    
+    
     /* *
      * 
      * Method printData()
      digunakan untuk mencetak biaya
      *
-    */ 
+     
     public void printData() 
     {
         System.out.println(" Nama Pelanggan : " +pelanggan.getNama()); 
@@ -155,5 +172,6 @@ public class Pesanan
         System.out.println(" Biaya : " +biaya); 
         
     }
+    */
 }
 

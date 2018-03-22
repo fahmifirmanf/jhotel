@@ -14,13 +14,7 @@ public class Lokasi
     
     
 
-    /**
-     * Constructor for objects of class Lokasi
-     */
-    public Lokasi()
-    {
-        
-    }
+    
     
     /**
      * method ini digunakan untuk menubjukkan lokasi hotel
@@ -101,6 +95,10 @@ public class Lokasi
         this.deskripsiLokasi = deskripsi;
     }
     
+    
+    public String toString(){
+        return null;
+    }
     
     public void printData() 
     {

@@ -40,6 +40,6 @@ public class DatabaseCustomer
      */
     public static String[] getCustomerDatabase()
     {
-        return list_customer;
+        return null;
     }
 }

@@ -11,21 +11,70 @@ public class JHotel
      */
     public static void main (String args[])
     {
-     Lokasi lokasi1 = new Lokasi(324, 567, "Denpasar");
-     Hotel hotel1 = new Hotel("Mawar Melati", lokasi1, 87);     
-     Customer customer1 = new Customer(134, "Bambang");     
-     Room room1 = new SingleRoom(hotel1, "K.301", true, StatusKamar.VACANT);
-     Pesanan pesan1 = new Pesanan(3, customer1, room1);
-     room1.setDailyTariff(300000);
-     pesan1.getBiaya();
-     lokasi1.printData();
-     customer1.printData();
-     hotel1.printData();
+     System.out.println("Welcome to JHotel");
+     Lokasi lokasi = new Lokasi(324, 567, "Denpasar");
+     Hotel hotel = new Hotel("Mawar Melati", lokasi, 87);     
+     Customer customer = new Customer(134, "Bambang");     
+     Room single = new SingleRoom(hotel, "K.301", true, StatusKamar.VACANT);
+     Pesanan pesan = new Pesanan(3, customer, single);
+     single.setDailyTariff(300000);
+     pesan.setBiaya();
+     //print data lokasi customer hotel
+     lokasi.printData();
+     //customer.printData();
+     hotel.printData();
      
-     Administrasi.pesananDitugaskan(pesan1, room1);
-     room1.printData();
-     pesan1.printData();
+     //cek method di administrasi
+     Administrasi.pesananDitugaskan(pesan, single);
+     //pesan.printData();
+     single.printData();    
      
+     if (single instanceof DoubleRoom){
+            System.out.println("Benar Double Room");
+        } else  System.out.println("Salah, bukan Double Room");
+     
+     Room doubleroom = new DoubleRoom(hotel, "S.907", true, StatusKamar.BOOKED);
+     Pesanan pesan2 = new Pesanan(436, customer,doubleroom); 
+     
+     doubleroom.setDailyTariff(600000);
+     pesan2.setBiaya();        
+    
+     Administrasi.pesananDitugaskan(pesan2, doubleroom);
+     //pesan2.printData();
+     doubleroom.printData();
+        
+     if (doubleroom instanceof DoubleRoom){
+            System.out.println("Benar Double Room");
+        } else  System.out.println("Salah, bukan Double Room");
+     
+     
+     
+      /*System.out.println("\n Method 2 pesananDibatalkan(kamar)");
+        Administrasi.pesananDibatalkan(kamar);
+        pesan.printData();
+        kamar.printData();
+        
+        //assign room ulang
+        Administrasi.pesananDitugaskan(pesan, kamar);
+        System.out.println("\n Method 3 pesananDibatalkan(pesan) ");
+        Administrasi.pesananDibatalkan(pesan);
+        pesan.printData();
+        kamar.printData();
+        
+        //assign room ulang
+        Administrasi.pesananDitugaskan(pesan, kamar);
+        System.out.println("\n Method 4 pesananSelesai(kamar) ");
+        Administrasi.pesananSelesai(kamar);
+        pesan.printData();
+        kamar.printData();
+        
+        //assign room ulang
+        Administrasi.pesananDitugaskan(pesan, kamar);
+        System.out.println("\nMethod 5 pesananSelesai(pesan) ");
+        Administrasi.pesananSelesai(pesan);
+        */
+        //pesan.printData();
+        //kamar.printData();
     }
 
     

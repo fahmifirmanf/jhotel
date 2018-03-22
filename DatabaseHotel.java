@@ -36,6 +36,6 @@ public class DatabaseHotel
         
     public static String[] getHotelDatabase()
     {
-        return list_hotel;
+        return null;
     }
 }

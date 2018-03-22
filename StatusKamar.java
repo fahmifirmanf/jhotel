@@ -11,15 +11,16 @@ BOOKED("Booked"),
 PROCESSED("Processed"),  
 VACANT("Vacant");
 
-   private String status_kamar;
+//private String status_kamar;
+private String deskripsi;
     
-    StatusKamar(String status_kamar)
+    StatusKamar(String deskripsi)
     {
-    this.status_kamar = status_kamar;
+    this.deskripsi = deskripsi;
 }
 
 public String toString(){
-    return status_kamar;
+    return deskripsi;
 }
 
 }

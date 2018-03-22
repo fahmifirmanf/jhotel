@@ -25,7 +25,7 @@ public class DatabaseRoom
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public static boolean addRoom(Customer baru)
+    public static boolean addRoom(Room baru)
     {
        return false; 
     }
@@ -37,6 +37,6 @@ public class DatabaseRoom
     
     public static String[] getRoomDatabase()
     {
-       return list_room;
+       return null;
     }
 }

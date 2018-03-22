@@ -13,14 +13,7 @@ public class Hotel
     private int bintang;
     
 
-    /**
-     * Constructor for objects of class Hotel
-     */
-    public Hotel()
-    {
-        // initialise instance variables
-        
-    }
+    
 
     /**
      * method ini digunakan untuk menunjukkan informasi hotel
@@ -99,6 +92,10 @@ public class Hotel
     public void setBintang(int bintang)
     {
         this.bintang = bintang;
+    }
+    
+    public String toString(){
+        return null;
     }
     
     public void printData() 

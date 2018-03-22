@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Administrasi here.
+ * Class ini digunakan untuk melakukan sistem administrasi
  *
  * @author Fahmi Firman F
  * @version 10-03-2017
@@ -61,7 +61,7 @@ public class Administrasi
         Pesanan pesan = kamar.getPesanan();
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
+        //pesan.setRoom(null);
         kamar.setPesanan(null);
         roomLepasPesanan(kamar);
     }

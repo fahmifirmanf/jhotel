@@ -15,16 +15,10 @@ public abstract class Room
     private StatusKamar status_kamar;
     private Pesanan pesan;
     
-
+    
     /**
      * Constructor for objects of class Room
      */
-    public Room()
-    {
-        // initialise instance variables
-        
-    }
-    
     public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
     {
         this.hotel = hotel;
@@ -73,7 +67,7 @@ public abstract class Room
         return pesan; 
     }
     
-     public abstract TipeKamar getTipeKamar();
+    public abstract TipeKamar getTipeKamar();
           
     
     
@@ -110,6 +104,10 @@ public abstract class Room
         this.pesan = pesan;
     }
     
+    public String toString(){
+        return null;
+    }
+    
     public void printData()
     {
     System.out.println(" Nama Hotel : " +hotel.getNama());
@@ -117,5 +115,6 @@ public abstract class Room
     System.out.println(" Status Ketersediaan : " +isAvailable); 
     System.out.println(" Harga : " +dailyTariff);
     System.out.println(" Status Kamar : " +status_kamar); 
+    System.out.println("Tipe Kamar  : "+getTipeKamar());
     }
 }
