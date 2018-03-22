@@ -1,3 +1,7 @@
+import java.util.Date;
+import java.util.Calendar;
+import java.text.*;
+import java.util.GregorianCalendar;
 
 public class JHotel
 {
@@ -11,7 +15,14 @@ public class JHotel
      */
     public static void main (String args[])
     {
-     System.out.println("Welcome to JHotel");
+     
+     Customer cust3 = new Customer(12,"Bambang",new GregorianCalendar (2002,03,10).getTime()); 
+     //cust3.getDOB();
+     
+     Customer cust4 = new Customer(12,"Bambang",new GregorianCalendar (2002,03,10).getTime()); 
+     System.out.println(cust4.getDOB());
+     /*
+        System.out.println("Welcome to JHotel");
      Lokasi lokasi = new Lokasi(324, 567, "Denpasar");
      Hotel hotel = new Hotel("Mawar Melati", lokasi, 87);     
      Customer customer = new Customer(134, "Bambang");     

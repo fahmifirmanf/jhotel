@@ -7,6 +7,8 @@
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.regex.*;
+import java.text.*;
 
 public class Customer
 {
@@ -16,11 +18,19 @@ public class Customer
     protected Date dob;
     
     
-    public Customer(int id, String nama, String email)
+    public Customer(int id, String nama,  int tanggal, int bulan, int tahun )
     {
         this.nama = nama;
         this.id = id;
-        this.email = email;
+        dob = new Date(tahun, bulan, tanggal);
+        
+    }
+    
+    public Customer(int id1, String nama1, Date dob1)
+    {
+        id = id1;
+        nama = nama1;
+        dob = dob1;
     }
 
     /**
@@ -52,6 +62,11 @@ public class Customer
     
     public Date getDOB()
     {
+        DateFormat formatter = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        String output = formatter.format(dob);      
+            
+        System.out.print(output);              
+        
         return dob;
     }
     

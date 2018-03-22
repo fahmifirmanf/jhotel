@@ -95,13 +95,16 @@ public class Hotel
     }
     
     public String toString(){
-        return null;
+        return "\nNama Hotel : " + nama +
+               "\nLokasi : " + lokasi.getDeskripsi() +
+               "\nBintang : " + bintang;
     }
     
-    public void printData() 
+    /*public void printData() 
     {
         System.out.println(" Nama Hotel : " +nama); 
         System.out.println(" Lokasi : " +lokasi.getDeskripsi()); 
         System.out.println(" Bintang Hotel : " +bintang); 
     }
+    */
 }

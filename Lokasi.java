@@ -96,14 +96,19 @@ public class Lokasi
     }
     
     
-    public String toString(){
-        return null;
+    public String toString()
+    {
+        return "\nKoordinat X : " + x_coord +
+               "\nKoordinat Y : " + y_coord +                
+               "\nDeskripsi Lokasi : " + deskripsiLokasi;
     }
     
-    public void printData() 
+    
+    /*public void printData() 
     {
         System.out.println(" Koordinat X : " +x_coord); 
         System.out.println(" Koordinat Y : " +y_coord); 
         System.out.println(" Deskripsi Alamat : " +deskripsiLokasi); 
     }
+    */
 }

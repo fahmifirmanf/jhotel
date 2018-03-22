@@ -19,15 +19,25 @@ public class Pesanan
     private Date tanggalPesan;
    
    
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,
+                    int tanggal, int bulan, int tahun)
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         biaya = kamar.getDailyTariff()*jumlahHari;
+        tanggalPesan = new Date(tahun, bulan, tanggal);
     }
 
-    
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,
+                    Date tanggalPesan)
+    {
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        biaya = kamar.getDailyTariff()*jumlahHari;
+        this.tanggalPesan = tanggalPesan;
+    }
     
     /**
      * method ini digunakan untuk menampilkan biaya
