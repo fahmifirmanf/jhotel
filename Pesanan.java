@@ -163,7 +163,21 @@ public class Pesanan
     }
     
     public String toString(){
-        return null;
+        String final_status = "KOSONG";
+        
+        if (isDiproses == true && isSelesai == false){
+            final_status = "DIPROSES";
+        } else if (isDiproses == false && isSelesai == false){
+            final_status = "KOSONG";
+        } else if (isDiproses == false && isSelesai == true){
+            final_status = "SELESAI";
+        }
+        
+        return "Dibuat Oleh " +pelanggan.getNama() +
+                ".Proses booking untuk" +kamar.getHotel()+
+                "Kamar Nomor " + kamar.getNomorKamar()+
+                "dengan tipe kamar yang diinginkan "+kamar.getTipeKamar()+
+                ". Status :" +final_status+ ".";
     }
     
     
