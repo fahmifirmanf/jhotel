@@ -10,15 +10,16 @@ public abstract class Room
     // instance variables - replace the example below with your own
     private Hotel hotel; 
     private String nomor_kamar;
-    private boolean isAvailable;
+    //private boolean isAvailable;
     protected double dailyTariff;
     private StatusKamar status_kamar;
-    private Pesanan pesan;
+    //private Pesanan pesan;
     
     
     /**
      * Constructor for objects of class Room
      */
+    /* perubahan pada modul 6
     public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
     {
         this.hotel = hotel;
@@ -26,11 +27,18 @@ public abstract class Room
         this.isAvailable = isAvailable;        
         this.status_kamar = status_kamar;
     }
-    
+    */
+
+    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    {
+        this.hotel = hotel;
+        this.nomor_kamar = nomor_kamar;
+        this.status_kamar = status_kamar;
+    }
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
+     * @param
      * @return    the sum of x and y
      */
     
@@ -46,11 +54,11 @@ public abstract class Room
         return nomor_kamar; 
     }
     
-      public boolean getStatusAvailable()
+      /*public boolean getStatusAvailable()
     {
         return isAvailable; 
     }
-    
+    */
         
       public double getDailyTariff()
     {
@@ -62,10 +70,11 @@ public abstract class Room
         return status_kamar; 
     }
     
-      public Pesanan getPesanan()
+     /* public Pesanan getPesanan()
     {
         return pesan; 
     }
+    */
     
     public abstract TipeKamar getTipeKamar();
           
@@ -83,10 +92,11 @@ public abstract class Room
         this.nomor_kamar = nomor_kamar;
     }
     
-    public void setStatusAvailable(boolean isAvailable)
+    /*public void setStatusAvailable(boolean isAvailable)
     {
         this.isAvailable = isAvailable;
     }
+    */
         
     
     public void setDailyTariff(double dailyTariff)
@@ -99,10 +109,11 @@ public abstract class Room
         this.status_kamar = status_kamar;
     }
     
-    public void setPesanan(Pesanan pesan)
+    /*public void setPesanan(Pesanan pesan)
     {
         this.pesan = pesan;
     }
+    */
     
     public String toString(){
         if(isAvailable){

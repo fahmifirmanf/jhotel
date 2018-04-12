@@ -17,8 +17,10 @@ public class Pesanan
     private boolean isSelesai;
     private Room kamar;
     private Date tanggalPesan;
-   
-   
+    private int id;
+    private boolean isAktif;
+
+   /*
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,
                     int tanggal, int bulan, int tahun)
     {
@@ -29,6 +31,7 @@ public class Pesanan
         tanggalPesan = new Date(tahun, bulan, tanggal);
     }
 
+
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,
                     Date tanggalPesan)
     {
@@ -38,6 +41,7 @@ public class Pesanan
         biaya = kamar.getDailyTariff()*jumlahHari;
         this.tanggalPesan = tanggalPesan;
     }
+    */
     
     /**
      * method ini digunakan untuk menampilkan biaya
@@ -45,6 +49,17 @@ public class Pesanan
      * 
      * @return biaya 
      */
+    public Pesanan(double jumlahHari, Customer pelanggan )
+    {
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        isAktif = true;
+        tanggalPesan = new Date();
+    }
+
+    public int getID() {
+        return id;
+    }
     public double getBiaya()
     {
         return biaya;
@@ -66,7 +81,9 @@ public class Pesanan
         return pelanggan;
     }
     
-           
+    public boolean getStatusDiproses(){
+        return isAktif;
+    }
       
      /**
      * method ini digunakan untuk menampilkan status Pesanan
@@ -85,7 +102,8 @@ public class Pesanan
      *
      * 
      * @return true/false
-     */public boolean getStatusSelesai()
+     */
+    public boolean getStatusSelesai()
     {
         return isSelesai;
     }
@@ -105,6 +123,10 @@ public class Pesanan
      * @param biaya
      * @return biaya
      */
+    public void setID(){
+     this.id = id;
+    }
+
     public void setBiaya()
     {
        biaya = kamar.getDailyTariff()*jumlahHari;
@@ -151,7 +173,12 @@ public class Pesanan
     {
         this.isSelesai = selesai;
     }
-    
+
+    public void setStatusAktif(boolean aktif)
+    {
+        this.isAktif = aktif;
+    }
+
      public void setRoom(Room kamar)
     {
         this.kamar = kamar;

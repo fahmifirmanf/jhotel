@@ -54,6 +54,7 @@ public class Administrasi
         pesan.setStatusDiproses(false);       
         pesan.setRoom(null);
         roomLepasPesanan(kamar);
+        kamar.getPesanan().setStatusAktif(false);
     }
     
     public static void pesananSelesai(Room kamar)
@@ -64,6 +65,7 @@ public class Administrasi
         //pesan.setRoom(null);
         kamar.setPesanan(null);
         roomLepasPesanan(kamar);
+        kamar.getPesanan().setStatusAktif(false);
     }
     
     public static void pesananDibatalkan(Pesanan pesan)
@@ -72,6 +74,7 @@ public class Administrasi
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setRoom(null);
+        pesan.getPesanan().setStatusAktif(false);
     }
     
     public static void pesananSelesai(Pesanan pesan)
@@ -80,5 +83,6 @@ public class Administrasi
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setRoom(null);
+        pesan.getPesanan().setStatusAktif(false);
     }
 }
