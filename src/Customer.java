@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.*;
 import java.text.*;
-
+import java.util.GregorianCalendar;
 public class Customer
 {
     protected int id;
@@ -22,7 +22,7 @@ public class Customer
     {
         this.nama = nama;
         this.id = id;
-        dob = new Date(tahun, bulan, tanggal);
+        this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
         
     }
     
@@ -114,8 +114,21 @@ public class Customer
         this.dob = dob;
     }
     
-    public String toString(){
-        return null;
+    public String toString()
+    {
+        if(DatabasePesanan.getPesanan(this) != null){
+            return "\n Customer ID : " + id +
+                   "\n Name : " + nama +
+                   "\n E-Mail " + email +
+                   "\n Date of Birth  : " + dob +
+                   "\n Booking order is in progress";
+                }
+        else{
+            return "\n Customer ID : " + id +
+                   "\n Name : " + nama +
+                   "\n E-Mail " + email +
+                   "\n Date of Birth  : " + dob;
+                }
     }
     
     /**public void printData() 

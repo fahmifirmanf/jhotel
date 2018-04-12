@@ -105,10 +105,22 @@ public abstract class Room
     }
     
     public String toString(){
-        return null;
+        if(isAvailable){
+            return "\nNama hotel : " + hotel.getNama() +
+                    "\nTipe Kamar : " + getTipeKamar() +
+                    "\nHarga : " + dailyTariff +
+                    "\nStatus Kamar : " + status_kamar;
+        }
+        else{
+            return "\nNama hotel : " + hotel.getNama() +
+                    "\nTipe Kamar : " + getTipeKamar().toString() +
+                    "\nHarga : " + dailyTariff +
+                    "\nStatus Kamar : " + status_kamar +
+                    "\nPelanggan : " +pesan.getPelanggan().getNama();
+                }
     }
     
-    public void printData()
+    /*public void printData()
     {
     System.out.println(" Nama Hotel : " +hotel.getNama());
     System.out.println(" Nomor Kamar : " +nomor_kamar); 
@@ -117,4 +129,5 @@ public abstract class Room
     System.out.println(" Status Kamar : " +status_kamar); 
     System.out.println("Tipe Kamar  : "+getTipeKamar());
     }
+    */
 }
