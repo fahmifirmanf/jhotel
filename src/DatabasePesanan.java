@@ -19,12 +19,12 @@ public class DatabasePesanan
 
     public static ArrayList<Pesanan> getPesananDatabase()
     {
-
+        return PESANAN_DATABASE;
     }
 
     public static int getLastPesananID()
     {
-
+        return LAST_PESANAN_ID;
     }
     
     /**
@@ -59,7 +59,7 @@ public class DatabasePesanan
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {
-            if(pesanan.getId() == id)
+            if(pesanan.getID() == id)
             {
                 return pesanan;
             }
@@ -87,7 +87,7 @@ public class DatabasePesanan
      * method ini digunakan untuk menghapus pesanan
      * 
      *
-     * @param pesan
+     *
      * @return false
      */
 

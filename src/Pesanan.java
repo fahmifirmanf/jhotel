@@ -55,11 +55,15 @@ public class Pesanan
         this.pelanggan = pelanggan;
         isAktif = true;
         tanggalPesan = new Date();
+        biaya = kamar.getDailyTariff() * jumlahHari;
+        id = DatabasePesanan.getLastPesananID() + 1;
     }
 
-    public int getID() {
+    public int getID()
+    {
         return id;
     }
+
     public double getBiaya()
     {
         return biaya;
@@ -81,7 +85,8 @@ public class Pesanan
         return pelanggan;
     }
     
-    public boolean getStatusDiproses(){
+    public boolean getStatusAktif()
+    {
         return isAktif;
     }
       
@@ -120,10 +125,11 @@ public class Pesanan
     /**
      * method ini digunakan untuk memberikan jumlah biaya
      *
-     * @param biaya
+     *
      * @return biaya
      */
-    public void setID(){
+    public void setID()
+    {
      this.id = id;
     }
 
@@ -140,7 +146,7 @@ public class Pesanan
     /**
      * method ini digunakan untuk memberikan informasi Customer
      *
-     * @param biaya
+     *
      * @return biaya
      */
     public void setPelanggan(Customer pelanggan) //atau customer baru
@@ -166,7 +172,7 @@ public class Pesanan
     /**
      * method ini digunakan untuk memberitahu apakah sudah diproses atau belum
      *
-     * @param diproses
+     *
      * @return diproses
      */
     public void setStatusSelesai(boolean selesai)

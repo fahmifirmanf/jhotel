@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Lokasi
+comment0.text=\r\n\ Kelas\ ini\ untuk\ menunjukkan\ informasi\ mengenai\ lokasi\ atau\ Alamat\ Hotel\r\n\r\n\ @author\ Fahmi\ Firman\ F\r\n\ @version\ 01-03-2018\r\n
+comment1.params=x_coord\ y_coord\ deskripsiLokasi
+comment1.target=Lokasi(float,\ float,\ java.lang.String)
+comment1.text=\r\n\ method\ ini\ digunakan\ untuk\ menubjukkan\ lokasi\ hotel\r\n\r\n\ @param\ x_coord,\ y_coord,\ deskripsiLokasi\r\n\ @return\ x_coord,\ y_coord,\ deskripsiLokasi\r\n
+comment2.params=
+comment2.target=float\ getX()
+comment2.text=\r\n\ method\ ini\ digunakan\ untuk\ mendapat\ nilai\ Xcoord\r\n\r\n\ \r\n\ @return\ x_coord\r\n
+comment3.params=
+comment3.target=float\ getY()
+comment3.text=\r\n\ method\ ini\ digunakan\ untuk\ mendapat\ nilai\ Ycoord\r\n\r\n\ \r\n\ @return\ y_coord\r\n
+comment4.params=
+comment4.target=java.lang.String\ getDeskripsi()
+comment4.text=\r\n\ method\ ini\ digunakan\ untuk\ mendapat\ nilai\ Deskripsi\ okasi\r\n\r\n\ \r\n\ @return\ deskripsiLokasi\r\n
+comment5.params=x_coord
+comment5.target=void\ setX(float)
+comment5.text=\r\n\ method\ ini\ digunakan\ untuk\ memberi\ nilai\ Xcoord\r\n\r\n\ @param\ x_coord\r\n\ @return\ x_coord\r\n
+comment6.params=y_coord
+comment6.target=void\ setY(float)
+comment6.text=\r\n\ method\ ini\ digunakan\ untuk\ memberi\ nilai\ Ycoord\r\n\r\n\ @param\ y_coord\r\n\ @return\ y_coord\r\n
+comment7.params=deskripsi
+comment7.target=void\ setDeskripsi(java.lang.String)
+comment7.text=\r\n\ method\ ini\ digunakan\ untuk\ memberi\ nilai\ deskripsi\r\n\r\n\ @param\ deskripsi\r\n\ @return\ deskripsi\r\n
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

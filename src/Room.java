@@ -116,19 +116,19 @@ public abstract class Room
     */
     
     public String toString(){
-        if(isAvailable){
-            return "\nNama hotel : " + hotel.getNama() +
-                    "\nTipe Kamar : " + getTipeKamar() +
-                    "\nHarga : " + dailyTariff +
-                    "\nStatus Kamar : " + status_kamar;
+        if(DatabasePesanan.getPesanan(this) == null){
+            return "\nNama hotel  : " + hotel.getNama() +
+                    "\nTipe kamar  : " + getTipeKamar() +
+                    "\nHarga       : " + dailyTariff +
+                    "\nStatus kamar: " + status_kamar;
         }
         else{
-            return "\nNama hotel : " + hotel.getNama() +
-                    "\nTipe Kamar : " + getTipeKamar().toString() +
-                    "\nHarga : " + dailyTariff +
-                    "\nStatus Kamar : " + status_kamar +
-                    "\nPelanggan : " +pesan.getPelanggan().getNama();
-                }
+            return "\nNama hotel  : " + hotel.getNama() +
+                    "\nTipe kamar  : " + getTipeKamar().toString() +
+                    "\nHarga       : " + dailyTariff +
+                    "\nStatus kamar: " + status_kamar +
+                    "\nPelanggan   : " + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
+        }
     }
     
     /*public void printData()
