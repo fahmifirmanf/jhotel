@@ -108,13 +108,7 @@ public abstract class Room
     {
         this.status_kamar = status_kamar;
     }
-    
-    /*public void setPesanan(Pesanan pesan)
-    {
-        this.pesan = pesan;
-    }
-    */
-    
+
     public String toString(){
         if(DatabasePesanan.getPesanan(this) == null){
             return "\nNama hotel  : " + hotel.getNama() +

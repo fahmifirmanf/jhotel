@@ -11,6 +11,7 @@ public class Hotel
     private String nama;
     private Lokasi lokasi;
     private int bintang;
+    private int id;
     
 
     
@@ -21,11 +22,12 @@ public class Hotel
      * @param nama, lokasi, bintang
      * @return nama, lokasi, bintang
      */
-    public Hotel (String nama, Lokasi lokasi, int bintang)
+    public Hotel (String nama, Lokasi lokasi, int bintang, int id)
     {
         this.nama = nama;
         this.lokasi = lokasi;
         this.bintang = bintang;
+        this.id = DatabaseHotel.getLastHotelId() + 1;
     }
     
     /**
@@ -34,6 +36,9 @@ public class Hotel
      * 
      * @return bintang
      */
+    public int getID() {
+        return id;
+    }
     public int getBintang()
     {
         return bintang; //menunjukkan nilai bintang
@@ -67,6 +72,9 @@ public class Hotel
      * 
      * @return nama
      */
+    public void SetID(int id){
+        this.id = id;
+    }
     public void setNama(String nama)
     {
         this.nama = nama;

@@ -2,8 +2,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class DatabaseRoom here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Fahmi Firman F
+ * @version 2018..4.17
  */
 public class DatabaseRoom
 {
@@ -47,6 +47,17 @@ public class DatabaseRoom
      *  a sample parameter for a method
      * @return    the sum of x and y
      */
+
+    public static Room getRoom(Hotel hotel, String nomor_kamar){
+        for (int i = 0; i < ROOM_DATABASE.size(); i++) {
+            Room tes = ROOM_DATABASE.get(i);
+            if (tes.getHotel().equals(hotel)&&tes.getNomorKamar()==nomor_kamar){
+                return tes;
+            }
+        }
+        return null;
+    }
+
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
     {
         ArrayList<Room> tempRoom = new ArrayList<Room>();
