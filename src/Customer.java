@@ -20,7 +20,7 @@ public class Customer
     public Customer(int id, String nama,  int tanggal, int bulan, int tahun )
     {
         this.nama = nama;
-        this.id = id;
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
         
     }

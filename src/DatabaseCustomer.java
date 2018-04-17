@@ -15,6 +15,10 @@ public class DatabaseCustomer
     {
         return CUSTOMER_DATABASE;
     }
+
+    public static int getLastCustomerID() {
+        return LAST_CUSTOMER_ID;
+    }
     
     public static boolean addCustomer(Customer baru)
     {
@@ -24,8 +28,8 @@ public class DatabaseCustomer
                 return false;
             }
         }
-        LAST_CUSTOMER_ID=baru.getID();
         CUSTOMER_DATABASE.add(baru);
+        LAST_CUSTOMER_ID=baru.getID();
         return true;
     }
 
