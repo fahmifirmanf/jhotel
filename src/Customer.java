@@ -7,7 +7,6 @@
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.regex.*;
 import java.text.*;
 import java.util.GregorianCalendar;
 public class Customer
@@ -116,18 +115,18 @@ public class Customer
     
     public String toString()
     {
-        if(DatabasePesanan.getPesanan(this) != null){
+        if(DatabasePesanan.getPesananAktif(this) != null){
             return "\n Customer ID : " + id +
                    "\n Name : " + nama +
                    "\n E-Mail " + email +
-                   "\n Date of Birth  : " + dob +
+                   "\n Date of Birth  : " + getDOB() +
                    "\n Booking order is in progress";
                 }
         else{
             return "\n Customer ID : " + id +
                    "\n Name : " + nama +
                    "\n E-Mail " + email +
-                   "\n Date of Birth  : " + dob;
+                   "\n Date of Birth  : " + getDOB();
                 }
     }
     
