@@ -15,12 +15,24 @@ public class JHotel
      */
     public static void main (String args[])
     {
-     
+        /*
+        Customer A = new Customer("a", 9, 4,2018);
+        DatabaseCustomer.addCustomer(A);
+        Customer B = new Customer("b", 8, 4,2018);
+        DatabaseCustomer.addCustomer(B);
+        System.out.println("Data pada Database Customer");
+        System.out.println(DatabaseCustomer.getCustomerDatabase());
+        */
+
+     /*
+     modul 5
      Customer cust3 = new Customer(12,"Bambang",new GregorianCalendar (2002,03,10).getTime()); 
      //cust3.getDOB();
-     
+     */
+     /*
      Customer cust4 = new Customer(12,"Bambang",new GregorianCalendar (2002,03,10).getTime()); 
      System.out.println(cust4.getDOB());
+     */
      /*
         System.out.println("Welcome to JHotel");
      Lokasi lokasi = new Lokasi(324, 567, "Denpasar");

@@ -22,12 +22,12 @@ public class Hotel
      * @param nama, lokasi, bintang
      * @return nama, lokasi, bintang
      */
-    public Hotel (String nama, Lokasi lokasi, int bintang, int id)
+    public Hotel (String nama, Lokasi lokasi, int bintang)
     {
         this.nama = nama;
         this.lokasi = lokasi;
         this.bintang = bintang;
-        this.id = DatabaseHotel.getLastHotelId() + 1;
+        id = DatabaseHotel.getLastHotelId() + 1;
     }
     
     /**

@@ -56,7 +56,8 @@ public class Administrasi
         //Pesanan pesan = kamar.getPesanan();
         Pesanan pesan = DatabasePesanan.getPesanan(kamar);
         pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(false);       
+        pesan.setStatusDiproses(false);  
+        pesan.setStatusAktif(false);     
         pesan.setRoom(null);
         //roomLepasPesanan(kamar);
         //kamar.getPesanan().setStatusAktif(false);

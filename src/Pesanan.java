@@ -166,7 +166,7 @@ public class Pesanan
      */
     public void setStatusDiproses(boolean diproses)
     {
-        this.isDiproses = diproses;
+        isDiproses = diproses;
     }
     
     /**
@@ -177,12 +177,12 @@ public class Pesanan
      */
     public void setStatusSelesai(boolean selesai)
     {
-        this.isSelesai = selesai;
+        isSelesai = selesai;
     }
 
     public void setStatusAktif(boolean aktif)
     {
-        this.isAktif = aktif;
+        isAktif = aktif;
     }
 
      public void setRoom(Room kamar)
