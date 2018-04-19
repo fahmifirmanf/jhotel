@@ -34,13 +34,13 @@ public class DatabasePesanan
      * @param baru
      * @return false
      */
-    public static boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
         if(PESANAN_DATABASE.contains(baru))
         {
             if(baru.getStatusAktif())
             {
-                return false;
+                throw new PesananSudahAdaException(baru);
             }
             else
             {
@@ -107,7 +107,7 @@ public class DatabasePesanan
         return null;
     }
     
-    public static boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Customer pesan) throws PesananTidakDitemukanException
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {
@@ -132,7 +132,7 @@ public class DatabasePesanan
             }
         }
 
-        return false;
+        throw new PesananTidakDitemukanException(pesan);
     }
 
 

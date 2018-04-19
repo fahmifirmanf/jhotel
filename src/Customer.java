@@ -17,19 +17,21 @@ public class Customer
     protected Date dob;
     
     
-    public Customer(int id, String nama,  int tanggal, int bulan, int tahun )
+    public Customer(String nama,  int tanggal, int bulan, int tahun, String email )
     {
         this.nama = nama;
         this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
+        this.email = email;
         
     }
     
-    public Customer(int id1, String nama1, Date dob1)
+    public Customer(int id1, String nama1, Date dob1, String email)
     {
         id = id1;
         nama = nama1;
         dob = dob1;
+        this.email = email;
     }
 
     /**

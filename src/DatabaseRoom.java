@@ -25,19 +25,14 @@ public class DatabaseRoom
         return ROOM_DATABASE;
     }
 
-    public static boolean addRoom(Room baru)
-    {
-        for(Room kamar : ROOM_DATABASE)
-        {
-            if(!kamar.getHotel().equals(baru.getHotel()) &&
-                    !kamar.getNomorKamar().equals(baru.getNomorKamar()))
-            {
-                ROOM_DATABASE.add(baru);
-                return true;
+    public static boolean addRoom(Room baru) throws RoomSudahAdaException{
+        for(Room cari : ROOM_DATABASE){
+            if(cari.getHotel() == baru.getHotel() && cari.getNomorKamar() == baru.getNomorKamar()) {
+                throw new RoomSudahAdaException(baru);
             }
         }
-
-        return false;
+        ROOM_DATABASE.add(baru);
+        return true;
     }
 
 
@@ -87,8 +82,9 @@ public class DatabaseRoom
 
         return tempRoom;    }
 
-    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException
     {
+
         for(Room kamar : ROOM_DATABASE)
         {
             if(kamar.getHotel().equals(hotel) &&
@@ -101,7 +97,7 @@ public class DatabaseRoom
                 }
             }
         }
-        return false;
+        throw new RoomTidakDitemukanException(hotel, nomor_kamar);
     }
     
 

@@ -6,34 +6,32 @@ import java.util.ArrayList;
  * @author Fahmi Firman F
  * @version 01-03-2018
  */
-public class DatabaseCustomer
-{
+public class DatabaseCustomer {
     private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
     private static int LAST_CUSTOMER_ID = 0;
 
-    public static ArrayList<Customer> getCustomerDatabase()
-    {
+    public static ArrayList<Customer> getCustomerDatabase() {
         return CUSTOMER_DATABASE;
     }
 
     public static int getLastCustomerID() {
         return LAST_CUSTOMER_ID;
     }
-    
-    public static boolean addCustomer(Customer baru)
-    {
+
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException {
         for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
             Customer tes = CUSTOMER_DATABASE.get(i);
-            if (tes.getID()==baru.getID()){
-                return false;
+            if (tes.getID() == baru.getID() || tes.getEmail() == baru.getEmail()) {
+                throw new PelangganSudahAdaException(baru);
             }
+
         }
         CUSTOMER_DATABASE.add(baru);
-        LAST_CUSTOMER_ID=baru.getID();
+        LAST_CUSTOMER_ID = baru.getID();
         return true;
     }
 
-   
+
     /**
      * method ini digunakan untuk menghapus customer dari database berdasarkan
      * id
@@ -41,11 +39,10 @@ public class DatabaseCustomer
      * @param id
      * @return false
      */
-    public static Customer getCustomer(int id)
-    {
+    public static Customer getCustomer(int id) {
         for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
             Customer tes = CUSTOMER_DATABASE.get(i);
-            if (tes.getID()==id){
+            if (tes.getID() == id) {
                 return tes;
             }
         }
@@ -53,21 +50,28 @@ public class DatabaseCustomer
     }
 
 
-    public static boolean removeCustomer(int id)
-    {
-        for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
-            Customer tes = CUSTOMER_DATABASE.get(i);
-            if (tes.getID()==id){
-                Pesanan pesan = DatabasePesanan.getPesananAktif(tes);
-                DatabasePesanan.removePesanan(pesan);
-                if(CUSTOMER_DATABASE.remove(tes))
-                {
-                    return true;
+        public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
+        {
+            for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
+                Customer tes = CUSTOMER_DATABASE.get(i);
+                if (tes.getID()==id){
+                    Pesanan pesan = DatabasePesanan.getPesananAktif(tes);
+                    try {
+                        DatabasePesanan.removePesanan(tes);
+                    } catch (PesananTidakDitemukanException test){
+                        System.out.println(test.getPesan());
+                    }
+                    if(CUSTOMER_DATABASE.remove(tes))
+                    {
+                        return true;
+                    }
                 }
             }
+            throw new PelangganTidakDitemukanException(id);
         }
-        return false;
+
     }
+
     
     /**
      * method ini digunakan untuk mencari customer di database
@@ -76,4 +80,4 @@ public class DatabaseCustomer
      * @return list_customer
      */
 
-}
+

@@ -90,7 +90,7 @@ public class Administrasi
     public static void pesananSelesai(Pesanan pesan)
     {
         //roomLepasPesanan(pesan.getRoom());
-        pesan.getRoom().setStatusKamar(StatusKamar.VACANT);
+        //pesan.getRoom().setStatusKamar(StatusKamar.VACANT);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);

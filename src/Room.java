@@ -29,11 +29,11 @@ public abstract class Room
     }
     */
 
-    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.status_kamar = status_kamar;
+        //this.status_kamar = status_kamar;
     }
     /**
      * An example of a method - replace this comment with your own
