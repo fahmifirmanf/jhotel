@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=LetsGo
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ LetsGo\ here.\r\n\r\n\ @author\ Fahmi\ Firman\ F\r\n\ @version\ 2018.04.21\r\n
+comment1.params=
+comment1.target=void\ Random()
+comment2.params=name\ id
+comment2.target=int\ getRandom(java.lang.String,\ int)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4
