@@ -16,13 +16,13 @@ public class DatabaseCustomer {
     }
 
     public static int getLastCustomerID() {
-        return LAST_CUSTOMER_ID = LAST_CUSTOMER_ID +1;
+        return LAST_CUSTOMER_ID;
     }
 
     public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException {
         for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
             Customer tes = CUSTOMER_DATABASE.get(i);
-            if (tes.getID() == baru.getID() || tes.getEmail() == baru.getEmail()) {
+            if (tes.getID() == baru.getID() || tes.getEmail().equals(baru.getEmail())) {
                 throw new PelangganSudahAdaException(baru);
             }
 
@@ -41,19 +41,21 @@ public class DatabaseCustomer {
      * @return false
      */
     public static Customer getCustomer(int id) {
-        for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
-            Customer tes = CUSTOMER_DATABASE.get(i);
-            if (tes.getID() == id) {
-                return tes;
+        for(Customer pelanggan : CUSTOMER_DATABASE)
+        {
+            if(pelanggan.getID() == id)
+            {
+                return pelanggan;
             }
         }
+
         return null;
     }
 
     public static Customer getCustomerLogin(String email, String password) {
         for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
             Customer tes = CUSTOMER_DATABASE.get(i);
-            if (tes.getEmail() == email && tes.getPassword() == password){
+            if (tes.getEmail().equals(email)  && tes.getPassword().equals(password)){
                 return tes;
             }
         }

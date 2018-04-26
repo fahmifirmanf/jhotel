@@ -47,7 +47,7 @@ public class DatabaseRoom
     public static Room getRoom(Hotel hotel, String nomor_kamar){
         for (int i = 0; i < ROOM_DATABASE.size(); i++) {
             Room tes = ROOM_DATABASE.get(i);
-            if (tes.getHotel().equals(hotel)&&tes.getNomorKamar()==nomor_kamar){
+            if (tes.getHotel().equals(hotel)&&tes.getNomorKamar().equals(nomor_kamar)){
                 return tes;
             }
         }

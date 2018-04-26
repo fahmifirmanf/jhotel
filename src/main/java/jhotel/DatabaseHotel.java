@@ -35,7 +35,7 @@ public class DatabaseHotel
     {
         for (int i = 0; i < HOTEL_DATABASE.size(); i++) {
             Hotel tes = HOTEL_DATABASE.get(i);
-            if (tes.getID()==baru.getID() || tes.getNama()==baru.getNama() && tes.getLokasi()==baru.getLokasi()){
+            if (tes.getID()==baru.getID() || tes.getNama() == baru.getNama() && tes.getLokasi()==baru.getLokasi()){
                 throw new HotelSudahAdaException(tes);
             }
         }

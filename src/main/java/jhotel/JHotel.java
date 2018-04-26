@@ -19,9 +19,35 @@ public class JHotel
 
     public static void main (String args[])
     {
+        try{
+            DatabaseHotel.addHotel(new Hotel("Kebun Hijau", new Lokasi(100, 102, "Lamongan Utara"), 6));
+            DatabaseHotel.addHotel(new Hotel("Makmur Jaya", new Lokasi(182, 193, "Bandung Selatan"), 5));
+        }
+        catch(HotelSudahAdaException b)
+        {
+            b.getPesan();
+        }
 
-        //System.out.println(" Implementasi Exception ");
+        try
+        {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "K.301"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "K.102"));
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(2), "S.123"));
+        }
+        catch(RoomSudahAdaException b)
+        {
+            b.getPesan();
+        }
+
         SpringApplication.run(JHotel.class, args);
+    }
+
+    public JHotel()
+    {
+        // initialise instance variables
+    }
+        //System.out.println(" Implementasi Exception ");
+        //SpringApplication.run(JHotel.class, args);
         /*
         Modul 7
         try {
@@ -345,4 +371,4 @@ public class JHotel
 
        //dministrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(1)), DatabaseRoom.getRoom(DatabaseHotel.getHotel(1, "k.301")));
         }
-}
+

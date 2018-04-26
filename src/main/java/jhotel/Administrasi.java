@@ -28,7 +28,7 @@ public class Administrasi
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-        if(kamar.getStatusKamar()==StatusKamar.VACANT){
+        if(kamar.getStatusKamar().equals(StatusKamar.VACANT)){
             pesan.setStatusSelesai(false);
             pesan.setStatusDiproses(true);
             pesan.setRoom(kamar);
