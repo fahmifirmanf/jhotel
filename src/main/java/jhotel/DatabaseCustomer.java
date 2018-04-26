@@ -16,7 +16,7 @@ public class DatabaseCustomer {
     }
 
     public static int getLastCustomerID() {
-        return LAST_CUSTOMER_ID;
+        return LAST_CUSTOMER_ID = LAST_CUSTOMER_ID +1;
     }
 
     public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException {
@@ -50,6 +50,16 @@ public class DatabaseCustomer {
         return null;
     }
 
+    public static Customer getCustomerLogin(String email, String password) {
+        for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
+            Customer tes = CUSTOMER_DATABASE.get(i);
+            if (tes.getEmail() == email && tes.getPassword() == password){
+                return tes;
+            }
+        }
+        return null;
+
+    }
 
         public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
         {

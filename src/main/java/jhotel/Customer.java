@@ -12,18 +12,19 @@ import java.text.*;
 import java.util.GregorianCalendar;
 public class Customer
 {
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
     
-    
-    public Customer(String nama,  int tanggal, int bulan, int tahun, String email )
+    public Customer(String nama,  int tanggal, int bulan, int tahun, String email, String password )
     {
         this.nama = nama;
         this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
         this.email = email;
+        this.password = password;
         
     }
     
@@ -61,7 +62,11 @@ public class Customer
     {
      return email;
     }
-    
+
+    public String getPassword(){
+        return password;
+    }
+
     public Date getDOB()
     {
         DateFormat formatter = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
@@ -93,7 +98,11 @@ public class Customer
     {
      this.nama = nama;
     }
-    
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
     public void setEmail(String email){
         String pattern = 
          "^[_&*_~A-Za-z0-9-\\+]+(\\.[_&*_~A-Za-z0-9-]+)*@[A-Za-z0-9][A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";

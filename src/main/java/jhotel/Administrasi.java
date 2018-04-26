@@ -28,9 +28,14 @@ public class Administrasi
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-        pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(true);
-        pesan.setRoom(kamar);
+        if(kamar.getStatusKamar()==StatusKamar.VACANT){
+            pesan.setStatusSelesai(false);
+            pesan.setStatusDiproses(true);
+            pesan.setRoom(kamar);
+        }
+        else {
+            pesan.setStatusAktif(false);
+        }
         //roomAmbilPesanan(pesan,kamar);
         
     }
@@ -55,11 +60,11 @@ public class Administrasi
     public static void pesananDibatalkan(Room kamar)
     {
         //Pesanan pesan = kamar.getPesanan();
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);  
         pesan.setStatusAktif(false);     
-        pesan.setRoom(null);
+        //pesan.setRoom(null);
         //roomLepasPesanan(kamar);
         //kamar.getPesanan().setStatusAktif(false);
     }
@@ -67,7 +72,7 @@ public class Administrasi
     public static void pesananSelesai(Room kamar)
     {
         //Pesanan pesan = //kamar.getPesanan();
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
@@ -84,7 +89,7 @@ public class Administrasi
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        pesan.setRoom(null);
+        //pesan.setRoom(null);
         //pesan.getPesanan().setStatusAktif(false);
     }
     
@@ -95,7 +100,7 @@ public class Administrasi
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        pesan.setRoom(null);
+        //pesan.setRoom(null);
         //pesan.getPesanan().setStatusAktif(false);
     }
 }
