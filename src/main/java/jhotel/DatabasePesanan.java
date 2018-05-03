@@ -13,10 +13,7 @@ public class DatabasePesanan
     private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
     private static int LAST_PESANAN_ID = 0;
 
-    public DatabasePesanan()
-    {
-               
-    }
+
 
     public static ArrayList<Pesanan> getPesananDatabase()
     {
@@ -45,12 +42,14 @@ public class DatabasePesanan
             }
             else
             {
+                LAST_PESANAN_ID = baru.getID();
                 PESANAN_DATABASE.add(baru);
                 return true;
             }
         }
         else
         {
+            LAST_PESANAN_ID = baru.getID();
             PESANAN_DATABASE.add(baru);
             return true;
         }
@@ -73,7 +72,7 @@ public class DatabasePesanan
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {
-            if(pesanan.getRoom().equals(kamar))
+            if(pesanan.getRoom().equals(kamar)&& pesanan.getStatusAktif())
             {
                 return pesanan;
             }

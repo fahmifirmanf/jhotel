@@ -12,7 +12,6 @@ public class CustomerController {
 
     @RequestMapping(value = "/newcustomer", method = RequestMethod.POST)
     public Customer newCust(@RequestParam(value="name") String name,
-
                             @RequestParam(value="email") String email,
                             @RequestParam(value="tahun", required = false, defaultValue  = "2000") int tahun,
                             @RequestParam(value="password") String password)

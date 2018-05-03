@@ -10,12 +10,9 @@ public class DatabaseHotel
 {
     private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
     private static int LAST_HOTEL_ID = 0;
-    // instance variables - replace the example below with your own
     private static String[] list_hotel;
 
-    /**
-     * Constructor for objects of class DatabaseHotel
-     */
+
     public static ArrayList<Hotel> getHotelDatabase()
     {
         return HOTEL_DATABASE;

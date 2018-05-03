@@ -55,10 +55,10 @@ public class Pesanan
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        isAktif = true;
         tanggalPesan = new Date();
         //biaya = kamar.getDailyTariff() * jumlahHari;
         id = DatabasePesanan.getLastPesananID() + 1;
+        isAktif = true;
     }
 
     public int getID()
@@ -214,10 +214,10 @@ public class Pesanan
         }
         return "\n Pesanan" +
                 "\n pelanggan=" + pelanggan.getNama() +
-                "\n jumlah hari=" + jumlahHari +
-                "\n hotel=null" +
-                "\n kamar=null" +
-                "\n tipeKamar=" +
+               // "\n jumlah hari=" + jumlahHari +
+               // "\n hotel=null" +
+               // "\n kamar=null" +
+               // "\n tipeKamar=" +
                 "\n status='" + final_status;
     }
     

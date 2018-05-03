@@ -6,6 +6,7 @@ package jhotel;
  * @version 01-03-2018
  */
 import java.util.Date;
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.text.*;
@@ -20,20 +21,22 @@ public class Customer
     
     public Customer(String nama,  int tanggal, int bulan, int tahun, String email, String password )
     {
-        this.nama = nama;
+
         this.id = DatabaseCustomer.getLastCustomerID()+1;
+        this.nama = nama;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
         this.email = email;
         this.password = password;
         
     }
     
-    public Customer(int id1, String nama1, Date dob1, String email)
+    public Customer(int id1, String nama1, Date dob1, String emaill, String passwordl)
     {
-        id = id1;
+        id = DatabaseCustomer.getLastCustomerID()+1;
         nama = nama1;
         dob = dob1;
-        this.email = email;
+        email = email;
+        password = passwordl;
     }
 
     /**

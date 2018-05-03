@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JHotel
 {
-  
     /**
      * method ini digunakan untuk menjalankan perintah main
      * id
@@ -23,9 +22,9 @@ public class JHotel
             DatabaseHotel.addHotel(new Hotel("Kebun Hijau", new Lokasi(100, 102, "Lamongan Utara"), 6));
             DatabaseHotel.addHotel(new Hotel("Makmur Jaya", new Lokasi(182, 193, "Bandung Selatan"), 5));
         }
-        catch(HotelSudahAdaException b)
+        catch(HotelSudahAdaException a)
         {
-            b.getPesan();
+            a.getPesan();
         }
 
         try
@@ -34,9 +33,9 @@ public class JHotel
             DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "K.102"));
             DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(2), "S.123"));
         }
-        catch(RoomSudahAdaException b)
+        catch(RoomSudahAdaException a)
         {
-            b.getPesan();
+            a.getPesan();
         }
 
         SpringApplication.run(JHotel.class, args);

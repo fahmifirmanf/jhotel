@@ -28,18 +28,35 @@ public class Administrasi
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-        if(kamar.getStatusKamar().equals(StatusKamar.VACANT)){
-            pesan.setStatusSelesai(false);
-            pesan.setStatusDiproses(true);
-            pesan.setRoom(kamar);
+        if(pesan != null && kamar != null)
+        {
+            if(kamar.getStatusKamar() == StatusKamar.VACANT)
+            {
+                pesan.setStatusSelesai(false);
+                pesan.setStatusDiproses(true);
+                pesan.setRoom(kamar);
+
+                roomAmbilPesanan(pesan, kamar);
+            }
+            else
+            {
+                pesan.setStatusAktif(false);
+            }
+
         }
-        else {
-            pesan.setStatusAktif(false);
         }
-        //roomAmbilPesanan(pesan,kamar);
-        
+
+
+
+    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
+    {
+        kamar.setStatusKamar(StatusKamar.BOOKED);
     }
 
+    public static void roomLepasPesanan(Room kamar)
+    {
+        kamar.setStatusKamar(StatusKamar.VACANT);
+    }
     /*
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
@@ -65,7 +82,7 @@ public class Administrasi
         pesan.setStatusDiproses(false);  
         pesan.setStatusAktif(false);     
         //pesan.setRoom(null);
-        //roomLepasPesanan(kamar);
+        roomLepasPesanan(kamar);
         //kamar.getPesanan().setStatusAktif(false);
     }
     
@@ -85,7 +102,7 @@ public class Administrasi
     
     public static void pesananDibatalkan(Pesanan pesan)
     {
-        //roomLepasPesanan(pesan.getRoom());
+        roomLepasPesanan(pesan.getRoom());
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
@@ -95,7 +112,7 @@ public class Administrasi
     
     public static void pesananSelesai(Pesanan pesan)
     {
-        //roomLepasPesanan(pesan.getRoom());
+        roomLepasPesanan(pesan.getRoom());
         //pesan.getRoom().setStatusKamar(StatusKamar.VACANT);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);

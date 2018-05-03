@@ -33,6 +33,7 @@ public abstract class Room
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
+        status_kamar = StatusKamar.VACANT;
         //this.status_kamar = status_kamar;
     }
     /**

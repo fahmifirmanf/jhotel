@@ -8,11 +8,12 @@ import java.util.ArrayList;
 public class HotelController {
     @RequestMapping(value = "/hotel", method = RequestMethod.GET)
     public  ArrayList<Hotel> hotelsList(){
-      ArrayList<Hotel> hotel = DatabaseHotel.getHotelDatabase();
-      return hotel;
+      //ArrayList<Hotel> hotel = DatabaseHotel.getHotelDatabase();
+      //return hotel;
+        return DatabaseHotel.getHotelDatabase();
     }
 
-    @RequestMapping(value = "/getcustomer/{id_hotel}", method = RequestMethod.GET)
+    @RequestMapping(value = "/hotel/{id_hotel}")
     public Hotel getHotel(@PathVariable int id_hotel) {
         Hotel hotel = DatabaseHotel.getHotel(id_hotel);
         return hotel;

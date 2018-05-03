@@ -8,18 +8,9 @@ import java.util.ArrayList;
  */
 public class DatabaseRoom
 {
-    // instance variables - replace the example below with your own
+
     //private static String[]  list_room;
     private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
-
-    /**
-     * Constructor for objects of class DatabaseRoom
-     */
-    public DatabaseRoom()
-    {
-
-
-    }
 
     public static ArrayList<Room> getRoomDatabase()
     {
@@ -28,7 +19,7 @@ public class DatabaseRoom
 
     public static boolean addRoom(Room baru) throws RoomSudahAdaException{
         for(Room cari : ROOM_DATABASE){
-            if(cari.getHotel() == baru.getHotel() && cari.getNomorKamar() == baru.getNomorKamar()) {
+            if(cari.getHotel().equals(baru.getHotel()) && cari.getNomorKamar().equals(baru.getNomorKamar())) {
                 throw new RoomSudahAdaException(baru);
             }
         }
@@ -47,7 +38,7 @@ public class DatabaseRoom
     public static Room getRoom(Hotel hotel, String nomor_kamar){
         for (int i = 0; i < ROOM_DATABASE.size(); i++) {
             Room tes = ROOM_DATABASE.get(i);
-            if (tes.getHotel().equals(hotel)&&tes.getNomorKamar().equals(nomor_kamar)){
+            if (tes.getHotel().equals(hotel) && tes.getNomorKamar().equals(nomor_kamar)){
                 return tes;
             }
         }
