@@ -20,7 +20,7 @@ public class JHotel
     {
         try{
             DatabaseHotel.addHotel(new Hotel("Kebun Hijau", new Lokasi(100, 102, "Lamongan Utara"), 6));
-            DatabaseHotel.addHotel(new Hotel("Makmur Jaya", new Lokasi(182, 193, "Bandung Selatan"), 5));
+
         }
         catch(HotelSudahAdaException a)
         {
@@ -30,8 +30,8 @@ public class JHotel
         try
         {
             DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "K.301"));
-            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "K.102"));
-            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(2), "S.123"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "K.302"));
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S.123"));
         }
         catch(RoomSudahAdaException a)
         {
