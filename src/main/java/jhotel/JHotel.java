@@ -5,37 +5,44 @@ import java.text.*;
 import java.util.GregorianCalendar;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+/**
+ * class JHotel sebagai class utama
+ *
+ * @author Fahmi FF
+ * @version 20-05-2018
+ */
 @SpringBootApplication
 public class JHotel
 {
     /**
      * method ini digunakan untuk menjalankan perintah main
-     * id
      *
      *
+     *@param args argumen
      * 
      */
 
     public static void main (String args[])
     {
+        //menambahkan objek hotel ke database
         try{
             DatabaseHotel.addHotel(new Hotel("Kebun Hijau", new Lokasi(100, 102, "Lamongan Utara"), 6));
 
         }
-        catch(HotelSudahAdaException a)
+        catch(HotelSudahAdaException e)
         {
-            a.getPesan();
+            e.getPesan();
         }
 
         try
         {
-            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "K.301"));
-            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "K.302"));
-            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S.123"));
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S.301"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "D.301"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "D.302"));
         }
-        catch(RoomSudahAdaException a)
+        catch(RoomSudahAdaException e)
         {
-            a.getPesan();
+            e.getPesan();
         }
 
         SpringApplication.run(JHotel.class, args);

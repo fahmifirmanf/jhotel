@@ -3,24 +3,22 @@ package jhotel;
  * Kelas ini untuk menunjukkan informasi mengenai hotel
  *
  * @author Fahmi Firman F
- * @version 01-03-2018
+ * @version 20-05-2018
  */
 public class Hotel
 {
-    // instance variables - replace the example below with your own
     private String nama;
     private Lokasi lokasi;
     private int bintang;
     private int id;
-    
 
-    
 
     /**
-     * method ini digunakan untuk menunjukkan informasi hotel
+     * Overloading constructor for objects of class Hotel.
      *
-     * @param nama, lokasi, bintang
-     * @return nama, lokasi, bintang
+     * @param nama berisi nama hotel
+     * @param lokasi berisi lokasi hotel
+     * @param bintang berisi bintang hotel
      */
     public Hotel (String nama, Lokasi lokasi, int bintang)
     {
@@ -29,16 +27,23 @@ public class Hotel
         this.bintang = bintang;
         id = DatabaseHotel.getLastHotelId() + 1;
     }
-    
+
     /**
-     * method ini digunakan untuk menampilkan nilai Bintang
+     * method ini digunakan untuk menampilkan nilai id
      *
-     * 
-     * @return bintang
+     *
+     * @return id
      */
     public int getID() {
         return id;
     }
+
+    /**
+     * method ini digunakan untuk menampilkan nilai Bintang
+     *
+     *
+     * @return bintang
+     */
     public int getBintang()
     {
         return bintang; //menunjukkan nilai bintang
@@ -65,16 +70,22 @@ public class Hotel
     {
         return lokasi;
     }
-    
     /**
-     * method ini digunakan untuk memberi nama Hotel
+     * method ini digunakan untuk memberi nilai id
      *
-     * 
-     * @return nama
+     *
+     * @param  id berisi id
      */
     public void SetID(int id){
         this.id = id;
     }
+
+    /**
+     * method ini digunakan untuk memberi nama Hotel
+     *
+     *
+     * @param  nama berisi nama
+     */
     public void setNama(String nama)
     {
         this.nama = nama;
@@ -84,7 +95,7 @@ public class Hotel
      * method ini digunakan untuk memberi nama Lokasi
      *
      * 
-     * @return lokasi
+     * @param  lokasi berisi lokasi hotel
      */
     public void setLokasi(Lokasi lokasi)
     {
@@ -95,7 +106,7 @@ public class Hotel
      * method ini digunakan untuk memberi nilai bintang
      *
      * 
-     * @return bintang
+     * @param  bintang berisi nilai bintang
      */
     public void setBintang(int bintang)
     {
@@ -103,16 +114,9 @@ public class Hotel
     }
     
     public String toString(){
-        return "\nNama Hotel : " + nama +
+        return "\nHotel\n"+
+                "\nNama Hotel : " + nama +
                "\nLokasi : " + lokasi.getDeskripsi() +
                "\nBintang : " + bintang + "\n";
     }
-    
-    /*public void printData() 
-    {
-        System.out.println(" Nama Hotel : " +nama); 
-        System.out.println(" Lokasi : " +lokasi.getDeskripsi()); 
-        System.out.println(" Bintang Hotel : " +bintang); 
-    }
-    */
 }

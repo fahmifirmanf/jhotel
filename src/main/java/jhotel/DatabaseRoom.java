@@ -1,10 +1,10 @@
 package jhotel;
 import java.util.ArrayList;
 /**
- * Write a description of class DatabaseRoom here.
+ * Class yang erisi database ruangan hotel
  *
  * @author Fahmi Firman F
- * @version 2018..4.17
+ * @version 2018.05.20
  */
 public class DatabaseRoom
 {
@@ -12,11 +12,21 @@ public class DatabaseRoom
     //private static String[]  list_room;
     private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
 
+    /**
+     * Digunakan untukvmembuat arraylist berisi room
+     *
+     * @return ROOM_DATABASE
+     */
     public static ArrayList<Room> getRoomDatabase()
     {
         return ROOM_DATABASE;
     }
 
+    /**
+     * Digunakan untuk menambahkan database room
+     *
+     * @param baru berisi objek Room
+     */
     public static boolean addRoom(Room baru) throws RoomSudahAdaException{
         for(Room cari : ROOM_DATABASE){
             if(cari.getHotel().equals(baru.getHotel()) && cari.getNomorKamar().equals(baru.getNomorKamar())) {
@@ -27,15 +37,15 @@ public class DatabaseRoom
         return true;
     }
 
-
     /**
-     * An example of a method - replace this comment with your own
+     * digunakan untuk mengambil database room berdasarkan hotel dan nomor kamar
      *
-     *  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param hotel berisi hotel
+     * @param nomor_kamar berisi nomor kamar
+     * @return tes
      */
-
     public static Room getRoom(Hotel hotel, String nomor_kamar){
+        /*
         for (int i = 0; i < ROOM_DATABASE.size(); i++) {
             Room tes = ROOM_DATABASE.get(i);
             if (tes.getHotel().equals(hotel) && tes.getNomorKamar().equals(nomor_kamar)){
@@ -44,7 +54,25 @@ public class DatabaseRoom
         }
         return null;
     }
+    */
+        for(Room kamar : ROOM_DATABASE)
+        {
+            if(kamar.getHotel().equals(hotel) && kamar.getNomorKamar().equals(nomor_kamar))
+            {
+                return kamar;
+            }
+        }
 
+        return null;
+    }
+
+
+    /**
+     * digunakan untuk mendapatkan arraylist room yang berasal dari hotel
+     *
+     * @param hotel berisi objek Hotel
+     * @return tempRoom
+     */
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
     {
         ArrayList<Room> tempRoom = new ArrayList<Room>();
@@ -60,6 +88,11 @@ public class DatabaseRoom
         return tempRoom;
     }
 
+    /**
+     * digunakan untuk mengambil arraylist dari vacant room
+     *
+     * @return tempRoom
+     */
     public static ArrayList<Room> getVacantRooms()
     {
         ArrayList<Room> tempRoom = new ArrayList<Room>();
@@ -72,8 +105,16 @@ public class DatabaseRoom
             }
         }
 
-        return tempRoom;    }
+        return tempRoom;
+    }
 
+    /**
+     * digunakan unruk menghapus room dari database
+     *
+     * @param hotel berisi objek Hotel
+     * @param nomor_kamar berisi nomor kamar
+     * @return true
+     */
     public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException
     {
 

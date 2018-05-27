@@ -22,34 +22,12 @@ public class Pesanan
     private int id;
     private boolean isAktif;
 
-   /*
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,
-                    int tanggal, int bulan, int tahun)
-    {
-        this.jumlahHari = jumlahHari;
-        this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        biaya = kamar.getDailyTariff()*jumlahHari;
-        tanggalPesan = new Date(tahun, bulan, tanggal);
-    }
 
-
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar,
-                    Date tanggalPesan)
-    {
-        this.jumlahHari = jumlahHari;
-        this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        biaya = kamar.getDailyTariff()*jumlahHari;
-        this.tanggalPesan = tanggalPesan;
-    }
-    */
-    
     /**
-     * method ini digunakan untuk menampilkan biaya
+     * Overloading Constructor for objects of class Pesanan.
      *
-     * 
-     * @return biaya 
+     * @param jumlahHari berisi jumlah hari
+     * @param pelanggan objek Customer
      */
     public Pesanan(double jumlahHari, Customer pelanggan )
     {
@@ -59,18 +37,34 @@ public class Pesanan
         //biaya = kamar.getDailyTariff() * jumlahHari;
         id = DatabasePesanan.getLastPesananID() + 1;
         isAktif = true;
+        tanggalPesan = new Date();
     }
 
+    /**
+     * digunakan untuk mendaptkan nilai id pesanan
+     *
+     * @return id
+     */
     public int getID()
     {
         return id;
     }
 
+    /**
+     * digunakan untuk mendapatkan nilai biaya.
+     *
+     * @return biaya
+     */
     public double getBiaya()
     {
         return biaya;
     }
-    
+
+    /**
+     * digunakan untuk mendaptkan nilai jumlah hari
+     *
+     * @return jumlahHari
+     */
     public double getJumlahHari()
     {
         return jumlahHari;
@@ -86,7 +80,12 @@ public class Pesanan
     {
         return pelanggan;
     }
-    
+
+    /**
+     * Digunakan untuk mendapatkan nilai status aktif.
+     *
+     * @return isAktif
+     */
     public boolean getStatusAktif()
     {
         return isAktif;
@@ -108,62 +107,76 @@ public class Pesanan
      * method ini digunakan untuk menampilkan status Pesanan Selesai atau belum
      *
      * 
-     * @return true/false
+     * @return isSelesai
      */
     public boolean getStatusSelesai()
     {
         return isSelesai;
     }
-    
+
+    /**
+     * digunakan untuk mendaptakan nilai room
+     *
+     * @return room
+     */
     public Room getRoom()
     {
         return kamar;
     }
-    
+
+    /**
+     * digunakan untuk mendaptakan nilai tanggal pesan
+     *
+     * @return tanggalPesan
+     */
     public Date getTanggalPesan()
     {
         return tanggalPesan;
     }
+
     /**
-     * method ini digunakan untuk memberikan jumlah biaya
+     * untuk menentukan nilai id.
      *
      *
-     * @return biaya
      */
     public void setID()
     {
      this.id = id;
     }
 
+    /**
+     *untuk menentukan nilai biaya
+     *
+     */
     public void setBiaya()
     {
        biaya = kamar.getDailyTariff()*jumlahHari;
     }
-    
+
+    /**
+     *untuk menentukan nilai biaya
+     *
+     */
     public void setJumlahHari(double jumlahHari)
     {
         this.jumlahHari = jumlahHari;
     }
-    
+
     /**
-     * method ini digunakan untuk memberikan informasi Customer
+     * untuk menenetukan nilai pelanggan.
      *
-     *
-     * @return biaya
+     * @param pelanggan objek Costumer
      */
     public void setPelanggan(Customer pelanggan) //atau customer baru
     {
         this.pelanggan = pelanggan;
     }
     
-     
-    
-    
-    
+
     /**
-     * method ini digunakan untuk memberitahu apakah sudah diproses atau tidak 
+     * method ini digunakan untuk memberi nilai status diproses
      *
-     * @param diproses
+     *
      * @return diproses
      */
     public void setStatusDiproses(boolean diproses)
@@ -172,16 +185,20 @@ public class Pesanan
     }
     
     /**
-     * method ini digunakan untuk memberitahu apakah sudah diproses atau belum
+     * method ini digunakan untuk memberi nilai status selesai
      *
-     *
-     * @return diproses
+     * @return selesai
      */
     public void setStatusSelesai(boolean selesai)
     {
         isSelesai = selesai;
     }
 
+    /**method ini digunakan untuk memberi nilai status aktif
+     *
+     *
+     * @return aktif
+     */
     public void setStatusAktif(boolean aktif)
     {
         isAktif = aktif;
@@ -214,10 +231,10 @@ public class Pesanan
         }
         return "\n Pesanan" +
                 "\n pelanggan=" + pelanggan.getNama() +
-               // "\n jumlah hari=" + jumlahHari +
-               // "\n hotel=null" +
-               // "\n kamar=null" +
-               // "\n tipeKamar=" +
+                "\n jumlah hari=" + jumlahHari +
+                "\n hotel=null" +
+                "\n kamar=null" +
+                "\n tipeKamar=" +
                 "\n status='" + final_status;
     }
     

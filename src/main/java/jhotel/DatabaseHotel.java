@@ -1,10 +1,10 @@
 package jhotel;
 import java.util.ArrayList;
 /**
- * Write a description of class DatabaseHotel here.
+ * Class  yg berisi database hotel
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Fahm Firman F
+ * @version 20-05-2018
  */
 public class DatabaseHotel
 {

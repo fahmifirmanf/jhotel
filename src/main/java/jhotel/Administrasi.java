@@ -3,7 +3,7 @@ package jhotel;
  * Class ini digunakan untuk melakukan sistem administrasi
  *
  * @author Fahmi Firman F
- * @version 10-03-2017
+ * @version 20-05-2018
  */
 
 public class Administrasi
@@ -21,10 +21,10 @@ public class Administrasi
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Digunakan ntuk melakukan proses pemesanan kamar
      *
-     *   a sample parameter for a method
-     * @return    the sum of x and y
+     * @param pesan berisi objek Pesanan
+     * @param kamar berisi objek Room
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
@@ -73,51 +73,61 @@ public class Administrasi
         kamar.setPesanan(null);
     }
     */
-    
+
+    /**
+     * Digunakan untuk melakukan pembatalan pesanan.
+     *
+     * @param kamar berisi objek Room
+     */
     public static void pesananDibatalkan(Room kamar)
     {
         //Pesanan pesan = kamar.getPesanan();
         Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);  
-        pesan.setStatusAktif(false);     
-        //pesan.setRoom(null);
+        pesan.setStatusAktif(false);
         roomLepasPesanan(kamar);
-        //kamar.getPesanan().setStatusAktif(false);
+
     }
-    
+
+    /**
+     * Digunakn untuk menyelesaikan pesanan
+     *
+     * @param kamar berisi objek Room
+     */
     public static void pesananSelesai(Room kamar)
     {
-        //Pesanan pesan = //kamar.getPesanan();
         Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        //pesan.setRoom(null);
-        //kamar.setPesanan(null);
-        //roomLepasPesanan(kamar);
-        //kamar.getPesanan().setStatusAktif(false);
         kamar.setStatusKamar(StatusKamar.VACANT);
     }
-    
+
+    /**
+     * Digunakan untuk melakukan pembatalan pesanan.
+     *
+     * @param pesan berisi objek Pesanan
+     */
     public static void pesananDibatalkan(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        //pesan.setRoom(null);
-        //pesan.getPesanan().setStatusAktif(false);
     }
-    
+
+    /**
+     * Digunakan untuk menandakan pesanan telah selesai.
+     *
+     * @param pesan berisi objek Pesanan
+     */
     public static void pesananSelesai(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
-        //pesan.getRoom().setStatusKamar(StatusKamar.VACANT);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        //pesan.setRoom(null);
-        //pesan.getPesanan().setStatusAktif(false);
+        pesan.setRoom(null);
     }
 }

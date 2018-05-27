@@ -3,7 +3,7 @@ package jhotel;
  * Kelas ini untuk menunjukkan informasi mengenai lokasi atau Alamat Hotel
  *
  * @author Fahmi Firman F
- * @version 01-03-2018
+ * @version 20-05-2018
  */
 public class Lokasi
 {
@@ -11,16 +11,15 @@ public class Lokasi
     private float x_coord;
     private float y_coord;
     private String deskripsiLokasi;
-    
-    
 
-    
-    
+
+
     /**
-     * method ini digunakan untuk menubjukkan lokasi hotel
+     * Overloading Constructor for objects of class Lokasi.
      *
-     * @param x_coord, y_coord, deskripsiLokasi
-     * @return x_coord, y_coord, deskripsiLokasi
+     * @param x_coord berisi koordinat x
+     * @param y_coord berisi koordinat y
+     * @param deskripsiLokasi berisi deskripsi lokasi
      */
     public Lokasi(float x_coord, float y_coord, String deskripsiLokasi)
     {
@@ -66,7 +65,7 @@ public class Lokasi
      * method ini digunakan untuk memberi nilai Xcoord
      *
      * @param x_coord
-     * @return x_coord
+     *
      */
     public void setX(float x_coord)
     {
@@ -77,7 +76,7 @@ public class Lokasi
      * method ini digunakan untuk memberi nilai Ycoord
      *
      * @param y_coord
-     * @return y_coord
+     *
      */
     public void setY(float y_coord)
     {
@@ -88,7 +87,7 @@ public class Lokasi
      * method ini digunakan untuk memberi nilai deskripsi
      *
      * @param deskripsi
-     * @return deskripsi
+     *
      */
     public void setDeskripsi(String deskripsi)
     {
@@ -100,15 +99,8 @@ public class Lokasi
     {
         return "\nKoordinat X : " + x_coord +
                "\nKoordinat Y : " + y_coord +                
-               "\nDeskripsi Lokasi : " + deskripsiLokasi;
+               "\nDeskripsi Lokasi : " + deskripsiLokasi +
+                "\n";
     }
-    
-    
-    /*public void printData() 
-    {
-        System.out.println(" Koordinat X : " +x_coord); 
-        System.out.println(" Koordinat Y : " +y_coord); 
-        System.out.println(" Deskripsi Alamat : " +deskripsiLokasi); 
-    }
-    */
+
 }

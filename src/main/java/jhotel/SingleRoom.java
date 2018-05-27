@@ -1,30 +1,44 @@
 package jhotel;
 /**
- * Write a description of class SingleRoom here.
+ * Class SingleRoom untuk tipe room single.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author FahmiFF
+ * @version 20-05-2018
  */
 public class SingleRoom extends Room
 {
     // instance variables - replace the example below with your own
     private static TipeKamar TIPE_KAMAR = TipeKamar.SINGLE;
 
-    
-
     /**
-     * An example of a method - replace this comment with your own
+     * Overloading Constructor for objects of class SingleRoom
      *
-     *
-     * @return    the sum of x and y
+     * @param hotel object hotel
+     * @param nomor_kamar berisi nomor kamar
      */
     public SingleRoom(Hotel hotel, String nomor_kamar)
     {
         super(hotel, nomor_kamar);
+        setDailyTariff(150000);
     }
-    
+
+    /**
+     * mendapatkan nilai tipe kamar
+     *
+     * @return TIPE_KAMAR
+     */
     public TipeKamar getTipeKamar()
     {
         return TIPE_KAMAR;
+    }
+
+    /**
+     * menentukan nilai daily tarif
+     *
+     * @param dailytariff nilai daily tariff
+     */
+    public void setDailyTariff(double dailytariff)
+    {
+        dailyTariff = dailytariff;
     }
 }
